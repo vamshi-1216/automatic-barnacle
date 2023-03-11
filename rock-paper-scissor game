@@ -1,0 +1,49 @@
+import random
+def game():
+    options=("rock","paper","scissor")
+    computer=random.choice(options)
+    print("--=========************===========----",end="\n")
+    num=int(input("no of rounds you want to play:"))#no.of rounds for 1 loop
+    print("--=========************===========----",end="\n")
+
+    p_score,c_score,tie=0,0,0#used for counting scores
+    
+    print()
+
+    
+    for i in range(num):
+        print("      ----games***start-------     ",end="\n")
+        player=input("enter a choice(rock,paper,scissor):")
+        if player==computer:
+            tie+=0
+        elif player=="rock" and computer=="scissor":
+            p_score+=1
+        elif player=="paper" and computer=="rock":
+            p_score+=1
+        elif player=="scissor" and computer=="paper":
+            p_score+=1
+        else:
+            c_score+=1
+        print("-------------%%%%%%%%%%%%------------",end="\n")
+        print("player:",player,"   ","computer:",computer,end="\n")
+        
+        print("      ----scores----           -",end="\n")  
+        print("yourscore:",p_score,"  ","computerscore:",c_score)
+        
+    print("--=========================----",end="\n")    
+    if p_score>c_score:
+        print("RESULT---YOU WIN!",end="\n")
+    elif c_score>p_score:
+        print("RESULT---YOU LOOSE!",end="\n")
+    else:
+        print("RESULT---tie",end="\n")
+    print("--=========************===========----",end="\n")
+    print("THANK YOU!")
+    print("--=========************===========----",end="\n")
+    
+running=True
+while running==True:
+    x=game()
+    if not input("willing to play again? (y/n):").lower()=='y':
+        running=False        
+
